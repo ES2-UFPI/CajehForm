@@ -22,12 +22,13 @@ export default class Publish extends Component {
           paddingTop: 5,
           borderTopLeftRadius: 200,
           elevation: 10,
+          margin: 0
         }}>
         <CardItem
           style={{
             backgroundColor: 'rgba(255,255,255,1)',
             height: 50,
-            marginTop: 0,
+            margin: 0,
             borderWidth: 0,
           }}>
           <Left>
@@ -50,18 +51,19 @@ export default class Publish extends Component {
           <Right>
             <Text
               style={{
-                color: 'rgba(255,100,0,1)',
-                fontFamily: 'Roboto',
+                color: 'rgba(0,0,0,1)',
+                fontFamily: 'Permanent Marker',
                 fontWeight: 'bold',
+                fontSize: 20,
               }}>
-              11h ago
+              ...?
             </Text>
           </Right>
         </CardItem>
         <CardItem
           cardBody
           style={{
-            backgroundColor: 'rgba(0,0,20,0.9)',
+            backgroundColor: 'rgba(0,0,20,0.95)',
             borderColor: 'rgba(0,0,0,0.0)',
             height: 400,
             width: null,
@@ -89,31 +91,31 @@ export default class Publish extends Component {
         </CardItem>
         <CardItem
           style={{
-            backgroundColor: 'rgba(0,0,0,0.0)',
+            backgroundColor: 'rgba(255,255,255,1)',
             borderBottomRightRadius: 20,
           }}>
           <Left>
           <Button transparent>
-              <Icon active name="bookmark" />
-              <Text>20 Saves</Text>
+              <Icon active name="bookmark" style = {{color: 'rgba(100,00,255,1)' }} />
+              <Text style = {{color: 'rgba(100,00,255,1)'}}>20 Saves</Text>
             </Button>
           </Left>
           <Body>
                 <Button transparent>
-                  <Icon active name="chatbubbles" />
-                  <Text>4 Comments</Text>
+                  <Icon active name="chatbubbles" style = {{color:'rgba(0,0,0,1)'}} />
+                  <Text style = {{ color:'rgba(0,0,0,1)'}}>4 Comments</Text>
                 </Button>
           </Body>
           <Right>
             <Button transparent>
-            <Icon active name="alert" style={{color:'orange'}}/>
+            <Icon active name="alarm" style={{color:'orange'}}/>
             <Text
               style={{
                 color: 'rgba(255,100,0,1)',
-                fontFamily: 'Roboto',
+                fontFamily: 'Permanent Marker',
                 fontWeight: 'bold',
               }}>
-             0 Alert
+             11h ago
             </Text>
             </Button>
           </Right>
