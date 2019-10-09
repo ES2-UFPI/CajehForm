@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/user/Desktop/CajehForm/ios/Pods/Target\ Support\ Files/Pods-AwesomeProject/Pods-AwesomeProject-dummy.m
+  /Users/user/Desktop/AwesomeProject/ios/Pods/Target\ Support\ Files/Pods-AwesomeProject/Pods-AwesomeProject-dummy.m
