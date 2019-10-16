@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Text, View, Image, Dimensions } from "react-native";
 import Swiper from "react-native-swiper";
-import { iOSUIKit } from "react-native-typography";
-import ContentMaterial from "./ContentMaterial.js";
-const { width } = Dimensions.get("window");
+import Page from "./Page.js";
 
 const styles = {
   container: {
@@ -66,7 +64,7 @@ export default class extends Component {
         loop={true}
         loadMinimal={false}
       >
-        <ContentMaterial
+        <Page
           design={styles.slide}
           backColor="rgba(0,0,20,1)"
           text1="Cajeh Things ! One"
@@ -81,7 +79,7 @@ export default class extends Component {
           form5="h2"
           title={<Text numberOfLines={1}>Page One</Text>}
         />
-        <ContentMaterial
+        <Page
           design={styles.slide}
           backColor="rgba(0,0,20,0.6)"
           text1="Cajeh Things ! Two"
@@ -96,7 +94,7 @@ export default class extends Component {
           form5="h2"
           title={<Text numberOfLines={1}>Page Two</Text>}
         />
-        <ContentMaterial
+        <Page
           design={styles.slide}
           backColor="rgba(0,0,20,0.8)"
           text1="Cajeh Things ! 03"
@@ -111,7 +109,7 @@ export default class extends Component {
           form5="h2"
           title={<Text numberOfLines={1}>Page Three</Text>}
         />
-        <ContentMaterial
+        <Page
           design={styles.slide}
           backColor="rgba(0,0,20,0.4)"
           text1="Cajeh Things ! Four"

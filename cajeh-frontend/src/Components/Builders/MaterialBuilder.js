@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Text, View} from "react-native";
 import Swiper from "react-native-swiper";
 import ContentBuilder from "./ContentBuilder.js";
+import {Keyboard} from 'react-native'
 
 const styles = {
   container: {
@@ -25,6 +26,9 @@ export default class MaterialBuilder extends Component {
       <Swiper
         style={styles.wrapper}
         height={400}
+        onIndexChanged={() => {
+          setTimeout(() => Keyboard.dismiss, 0);
+        }}
         dot={
           <View
             style={{
