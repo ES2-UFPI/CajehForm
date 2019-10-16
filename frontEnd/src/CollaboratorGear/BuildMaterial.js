@@ -11,11 +11,12 @@ import {
   Body,
   Icon,
   Fab,
-  Text as NewText
+  Text as NewText,
+  Subtitle
 } from "native-base";
 import { Text, View, TouchableOpacity } from "react-native";
+import Builder from "../Components/Builder.js";
 import Modal from "react-native-modal";
-import Publish from "../Components/Publish.js";
 import CajehButton from "../Components/CajehButton.js";
 import { material } from "react-native-typography";
 
@@ -43,11 +44,7 @@ export default class Lobby extends Component {
         >
           <Left>
             <NewButton
-              style={{
-                backgroundColor: "rgba(0,0,0, 0)",
-                height: 60,
-                width: 80
-              }}
+              style={{ backgroundColor: "rgba(0,0,0, 0)", height: 60, width:80 }}
               onPress={this.toggleModal}
             >
               <Icon name="hammer" style={{ color: "rgba(255,255,255,1)" }} />
@@ -64,7 +61,7 @@ export default class Lobby extends Component {
                   })
                 }
               >
-                L
+                M
               </Text>
               <Text
                 style={
@@ -75,13 +72,14 @@ export default class Lobby extends Component {
                   })
                 }
               >
-                obby
+                aterial
               </Text>
             </Title>
+            <Subtitle>build</Subtitle>
           </Body>
           <Right>
             <NewButton
-              style={{ backgroundColor: "rgba(0,0,0, 0)", height: 60 }}
+              style={{ backgroundColor: "rgba(0,0,0, 0)", height: 60}}
               onPress={() => this.props.navigation.navigate("MySaves")}
             >
               <Icon name="bookmark" style={{ color: "rgba(255,255,255,1)" }} />
@@ -171,22 +169,6 @@ export default class Lobby extends Component {
           </Modal>
           {/* Mudar a Cor do Lobby da Rede, variar e vender para o usuário escolher */}
           <View style={{ top: 60 }}>
-            <Publish
-              collaboratorImage="https://facebook.github.io/react-native/docs/assets/favicon.png"
-              collaboratorName="Cajeh"
-              collaboratorNote="@danielcajeh"
-              publishSaves={20}
-              publishComments={4}
-              publishTimeAgo={11}
-            />
-            <Publish
-              collaboratorImage="https://facebook.github.io/react-native/docs/assets/favicon.png"
-              collaboratorName="Neo"
-              collaboratorNote="@dixMatrix"
-              publishSaves={15}
-              publishComments={2}
-              publishTimeAgo={15}
-            />
             <View style={{ height: 60 }} />
           </View>
         </Content>
