@@ -102,6 +102,8 @@ export default class Lobby extends Component {
             style={{ margin: 0 }}
             useNativeDriver={true}
             hideModalContentWhileAnimating = {true}
+            animationIn= 'fadeInUp'
+            animationOut= 'fadeOutDown'
           >
             <View style={{ flex: 1, flexDirection: "column" }}>
               <TouchableOpacity style={{ flex: 1 }} onPress={this.toggleModal}>
@@ -147,7 +149,7 @@ export default class Lobby extends Component {
                 <NewButton
                   style={{
                     backgroundColor: "rgba(0,0,0, 0.5)",
-                    height: 60,
+                    height: 50,
                     borderBottomWidth: 3,
                     borderBottomColor: "rgba(255,255,255,0.6)"
                   }}
@@ -158,7 +160,7 @@ export default class Lobby extends Component {
                     style={{ color: "rgba(255,255,255,1)"}}
                   />
                   <NewText style={{ color: "white", fontWeight: "700" }}>
-                    Exit
+                    Ex1t
                   </NewText>
                   <Icon
                     name="close-circle"
