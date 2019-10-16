@@ -63,7 +63,7 @@ export default class Lobby extends Component {
                   })
                 }
               >
-                M
+                S
               </Text>
               <Text
                 style={
@@ -74,7 +74,7 @@ export default class Lobby extends Component {
                   })
                 }
               >
-                aterial
+                aves
               </Text>
             </Title>
             <Subtitle>view</Subtitle>
