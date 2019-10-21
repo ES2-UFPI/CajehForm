@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Text, View} from "react-native";
 import Swiper from "react-native-swiper";
 import ContentBuilder from "./ContentBuilder.js";
+import { TouchableOpacity } from "react-native";
 import {Keyboard} from 'react-native'
 
 const styles = {
@@ -25,10 +26,12 @@ export default class MaterialBuilder extends Component {
         <View>
       <Swiper
         style={styles.wrapper}
+        showsButtons={true}
         height={400}
-        onIndexChanged={() => {
-          setTimeout(() => Keyboard.dismiss, 0);
-        }}
+        buttonWrapperStyle = {{backgroundColor: 'transparent', flexDirection: 'row', position: 'absolute', top: 0, left: 0, flex: 1, paddingHorizontal: 10, paddingVertical: 10, justifyContent: 'space-between', alignItems: 'center'}}
+        nextButton = {<Text style={{fontSize: 100, color: "rgba(0,140,140,0.8)"}}>›</Text>}
+        onMomentumScrollEnd ={Keyboard.dismiss}
+        prevButton = {<Text style={{fontSize: 100, color: "rgba(0,140,140,0.8)"}}>‹</Text>}
         dot={
           <View
             style={{
