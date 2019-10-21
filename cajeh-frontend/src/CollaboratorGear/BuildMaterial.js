@@ -50,7 +50,7 @@ export default class Lobby extends Component {
               style={{ backgroundColor: "rgba(0,0,0, 0)", height: 60, width:80 }}
               onPress={this.showModal}
             >
-              <Icon name="hammer" style={{ color: "rgba(255,255,255,1)" }} />
+              <Icon name="construct" style={{ color: "rgba(255,255,255,1)" }} />
             </NewButton>
           </Left>
           <Body>

@@ -13,14 +13,12 @@ const AppNavigator = createStackNavigator({
     screen: LobbyScreen,
     navigationOptions: () => ({
       header: null,
-      footer: null,
     }),
   },
   MyPublish: {
     screen: MyPublish,
     navigationOptions: () => ({
       header: null,
-      footer: null,
     }),
   },
   MyMaterial: {

@@ -17,6 +17,7 @@ import Material from "./Material.js";
 
 export default class Publish extends Component {
   render() {
+    const material = this.props.publishContent.split('<page>')
     return (
       <View
         style={{
@@ -71,7 +72,11 @@ export default class Publish extends Component {
           </Right>
         </CardItem>
         {/* Mudar a Cor Base da Publicação, variar de 0.5 até 1 */}
-        <Material />
+        <Material page0 = {material[0]}
+          page1= {material[1]}
+          page2= {material[2]}
+          page3= {material[3]}
+        />
         <View
           style={{ backgroundColor: "rgba(255,255,255,0.5)", height: 10 }}
         />

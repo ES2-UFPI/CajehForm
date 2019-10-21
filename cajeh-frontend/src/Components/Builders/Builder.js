@@ -66,6 +66,8 @@ export default class Builder extends Component {
   };
 
   render() {
+    const sendApi =  `${this.state.page0.text1}<text>${this.state.page0.text2}<text>${this.state.page0.text3}<text>${this.state.page0.text4}<text>${this.state.page0.text5}<<page>${this.state.page1.text1}<text>${this.state.page1.text2}<text>${this.state.page1.text3}<text>${this.state.page1.text4}<text>${this.state.page1.text5}<page>${this.state.page2.text1}<text>${this.state.page2.text2}<text>${this.state.page2.text3}<text>${this.state.page2.text4}<text>${this.state.page2.text5}<<page>${this.state.page3.text1}<text>${this.state.page3.text2}<text>${this.state.page3.text3}<text>${this.state.page3.text4}<text>${this.state.page3.text5}`
+
     return (
       <View
         style={{
@@ -105,7 +107,7 @@ export default class Builder extends Component {
             <TouchableOpacity onPress={() => console.log("hi")}>
               <Text
                 style={{
-                  color: "rgba(50,150,50,1)",
+                  color: "rgba(80,0,200,1)",
                   fontWeight: "700",
                   fontSize: 20
                 }}
@@ -168,6 +170,9 @@ export default class Builder extends Component {
             </Button>
           </Right>
         </CardItem>
+        <Text>
+          {sendApi}
+        </Text>
       </View>
     );
   }

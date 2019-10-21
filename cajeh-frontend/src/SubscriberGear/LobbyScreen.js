@@ -31,6 +31,7 @@ export default class Lobby extends Component {
     this.setState({ isModalVisible: false });
   };
   render() {
+    const publishContent =  `Cajeh Things ! One<text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<text>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<text>When an unknown printer took a galley of type and scrambled it to make a type specimen book<text>The Begin<page>Cajeh Things ! Two<text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<text>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<text>When an unknown printer took a galley of type and scrambled it to make a type specimen book<text>The Middle<page>Cajeh Things ! 03<text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<text>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<text>When an unknown printer took a galley of type and scrambled it to make a type specimen book<text>The Fight<page>Cajeh Things ! Four<text>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<text>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<text>When an unknown printer took a galley of type and scrambled it to make a type specimen book<text>The End<page>`
     return (
       <Container style={{ position: "relative" }}>
         <Header
@@ -53,7 +54,7 @@ export default class Lobby extends Component {
               }}
               onPress={this.showModal}
             >
-              <Icon name="hammer" style={{ color: "rgba(255,255,255,1)" }} />
+              <Icon name="construct" style={{ color: "rgba(255,255,255,1)" }} />
             </NewButton>
           </Left>
           <Body>
@@ -159,14 +160,14 @@ export default class Lobby extends Component {
                   onPress={this.hideModal}
                 >
                   <Icon
-                    name="close-circle"
+                    name="close-circle-outline"
                     style={{ color: "rgba(255,255,255,1)"}}
                   />
                   <NewText style={{ color: "white", fontWeight: "700" }}>
                     Close
                   </NewText>
                   <Icon
-                    name="close-circle"
+                    name="close-circle-outline"
                     style={{ color: "rgba(255,255,255,1)"}}
                   />
                 </NewButton>
@@ -181,6 +182,7 @@ export default class Lobby extends Component {
               publishSaves={20}
               publishComments={4}
               publishTimeAgo={11}
+              publishContent = {publishContent}
             />
             <Publish
               collaboratorImage="https://facebook.github.io/react-native/docs/assets/favicon.png"
@@ -189,6 +191,7 @@ export default class Lobby extends Component {
               publishSaves={15}
               publishComments={2}
               publishTimeAgo={15}
+              publishContent = {publishContent}
             />
             <View style={{ height: 60 }} />
           </View>
