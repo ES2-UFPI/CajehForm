@@ -17,6 +17,7 @@ import Material from "./Material.js";
 
 export default class Publish extends Component {
   render() {
+    const material = this.props.publishContent.split('<page>')
     return (
       <View
         style={{
@@ -46,7 +47,7 @@ export default class Publish extends Component {
             <TouchableOpacity>
                 <Text
                   style={{
-                    color: "#121212",
+                    color: "rgba(50,50,50,1)",
                     fontWeight: "600"
                   }}
                 >
@@ -57,7 +58,7 @@ export default class Publish extends Component {
             </Body>
           </Left>
           <Right>
-            <TouchableOpacity onPress={() => console.log("hi")}>
+            <Button transparent onPress={() => console.log("hi")} style={{left:20}}>
               <Text
                 style={{
                   color: "rgba(0,0,0,1)",
@@ -67,11 +68,15 @@ export default class Publish extends Component {
               >
                 ...
               </Text>
-            </TouchableOpacity>
+            </Button>
           </Right>
         </CardItem>
         {/* Mudar a Cor Base da Publicação, variar de 0.5 até 1 */}
-        <Material />
+        <Material page0 = {material[0]}
+          page1= {material[1]}
+          page2= {material[2]}
+          page3= {material[3]}
+        />
         <View
           style={{ backgroundColor: "rgba(255,255,255,0.5)", height: 10 }}
         />
@@ -86,7 +91,7 @@ export default class Publish extends Component {
               <Icon
                 active
                 name="bookmark"
-                style={{ color: "rgba(80,0,200,1)" }}
+                style={{ color: "rrgba(80,0,200,1)" }}
               />
               <Text style={{ color: "rgba(80,0,200,1)", fontWeight: "700" }}>
                 {this.props.publishSaves} Saves
@@ -98,9 +103,9 @@ export default class Publish extends Component {
               <Icon
                 active
                 name="chatbubbles"
-                style={{ color: "rgba(255,100,0,1)" }}
+                style={{ color: "rgba(0,140,140,1)" }}
               />
-              <Text style={{ color: "rgba(0,0,0,1)", fontWeight: "600" }}>
+              <Text style={{ color: "rgba(50,50,50,1)", fontWeight: "600" }}>
                 {this.props.publishComments} Comments
               </Text>
             </Button>
@@ -110,11 +115,11 @@ export default class Publish extends Component {
               <Icon
                 active
                 name="alarm"
-                style={{ color: "rgba(255,100,0,1)" }}
+                style={{ color: "rgba(0,140,140,1)"}}
               />
               <Text
                 style={{
-                  color: "rgba(0,0,0,1)",
+                  color: "rgba(50,50,50,1)",
                   fontWeight: "600"
                 }}
               >

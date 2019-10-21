@@ -5,15 +5,17 @@ import {
   Right,
   Body,
   Text,
-  Card,
   CardItem,
   Thumbnail,
   Button,
   Icon,
-  View
+  View,
+  Title
 } from "native-base";
 import { TouchableOpacity } from "react-native";
+import { material } from "react-native-typography";
 import MaterialBuilder from "./MaterialBuilder.js";
+import Axios from "axios";
 
 export default class Builder extends Component {
   constructor(props) {
@@ -64,8 +66,21 @@ export default class Builder extends Component {
       }
     }));
   };
+  sendMaterialApi = (pagesContent) => {
+    Axios.post('http://cajeh-api.herokuapp.com/publications',{
+      user_id: 1,
+      title:'Publication',
+      content: pagesContent
+    }).then(function(response){
+      console.log(response)
+    }).catch(function(error){
+      console.log(error)
+    })
+  }
 
   render() {
+    const pagesContent =  `${this.state.page0.text1}<text>${this.state.page0.text2}<text>${this.state.page0.text3}<text>${this.state.page0.text4}<text>${this.state.page0.text5}<page>${this.state.page1.text1}<text>${this.state.page1.text2}<text>${this.state.page1.text3}<text>${this.state.page1.text4}<text>${this.state.page1.text5}<page>${this.state.page2.text1}<text>${this.state.page2.text2}<text>${this.state.page2.text3}<text>${this.state.page2.text4}<text>${this.state.page2.text5}<page>${this.state.page3.text1}<text>${this.state.page3.text2}<text>${this.state.page3.text3}<text>${this.state.page3.text4}<text>${this.state.page3.text5}`
+
     return (
       <View
         style={{
@@ -102,16 +117,31 @@ export default class Builder extends Component {
             </Body>
           </Left>
           <Right>
-            <TouchableOpacity onPress={() => console.log("hi")}>
-              <Text
-                style={{
-                  color: "rgba(50,150,50,1)",
-                  fontWeight: "700",
-                  fontSize: 20
-                }}
+            <TouchableOpacity onPress={() => this.sendMaterialApi(pagesContent)}>
+            <Title>
+            <Text
+                style={
+                  (material.headline,
+                  {
+                    color: "rgba(50,180,180,1)",
+                    fontWeight: "900"
+                  })
+                }
               >
-                Build
+                P
               </Text>
+              <Text
+                style={
+                  (material.headline,
+                  {
+                    color: "rgba(100,100,100,1)",
+                    fontWeight: "700"
+                  })
+                }
+              >
+                ublish
+              </Text>
+              </Title>
             </TouchableOpacity>
           </Right>
         </CardItem>
@@ -143,7 +173,7 @@ export default class Builder extends Component {
               <Icon
                 active
                 name="chatbubbles"
-                style={{ color: "rgba(255,100,0,1)" }}
+                style={{ color: "rgba(0,140,140,1)"}}
               />
               <Text style={{ color: "rgba(0,0,0,1)", fontWeight: "600" }}>
                 ? Comments
@@ -155,7 +185,7 @@ export default class Builder extends Component {
               <Icon
                 active
                 name="alarm"
-                style={{ color: "rgba(255,100,0,1)" }}
+                style={{ color: "rgba(0,140,140,1)" }}
               />
               <Text
                 style={{

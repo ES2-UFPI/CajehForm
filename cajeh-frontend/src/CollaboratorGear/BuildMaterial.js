@@ -50,7 +50,7 @@ export default class Lobby extends Component {
               style={{ backgroundColor: "rgba(0,0,0, 0)", height: 60, width:80 }}
               onPress={this.showModal}
             >
-              <Icon name="hammer" style={{ color: "rgba(255,255,255,1)" }} />
+              <Icon name="construct" style={{ color: "rgba(255,255,255,1)" }} />
             </NewButton>
           </Left>
           <Body>
@@ -149,7 +149,7 @@ export default class Lobby extends Component {
                 </View>
                 <NewButton
                   style={{
-                    backgroundColor: "rgba(0,0,0, 0.5)",
+                    backgroundColor: "rgba(0,0,0,0.9)",
                     height: 50,
                     borderBottomWidth: 3,
                     borderBottomColor: "rgba(255,255,255,0.6)"
@@ -157,14 +157,14 @@ export default class Lobby extends Component {
                   onPress={this.hideModal}
                 >
                   <Icon
-                    name="close-circle"
+                    name="close-circle-outline"
                     style={{ color: "rgba(255,255,255,1)"}}
                   />
                   <NewText style={{ color: "white", fontWeight: "700" }}>
                     Close
                   </NewText>
                   <Icon
-                    name="close-circle"
+                    name="close-circle-outline"
                     style={{ color: "rgba(255,255,255,1)"}}
                   />
                 </NewButton>

@@ -24,14 +24,14 @@ export default class ContentBuilder extends Component {
           style={[
             iOSUIKit.largeTitleEmphasized,
             {
-              color: "rgb(255, 135, 95)",
+              color: "rgba(0,190,170,1)",
               fontWeight: "900",
               paddingBottom: 10,
               height: 50
             }
           ]}
           placeholder="Title mark"
-          placeholderTextColor="rgb(255, 135, 95)"
+          placeholderTextColor="rgba(0,190,170,1)"
           onChangeText={(text1) => this.setState({text1},
           this.props.connect(`page${this.props.id}`,'text1',text1))}
           value={this.state.text1}
@@ -39,11 +39,12 @@ export default class ContentBuilder extends Component {
         <TextInput
           multiline={true}
           keyboardAppearance="dark"
+          numberOfLines={3}
           style={[
             iOSUIKit.title3Emphasized,
             {
               color: "rgb(255, 255, 255)",
-              fontWeight: "900",
+              fontWeight: "700",
               paddingBottom: 10,
               height: 80
             }
@@ -62,7 +63,7 @@ export default class ContentBuilder extends Component {
             iOSUIKit.title3Emphasized,
             {
               color: "rgb(255, 255, 255)",
-              fontWeight: "900",
+              fontWeight: "700",
               paddingBottom: 10,
               height: 80
             }
@@ -81,7 +82,7 @@ export default class ContentBuilder extends Component {
             iOSUIKit.title3Emphasized,
             {
               color: "rgb(255, 255, 255)",
-              fontWeight: "900",
+              fontWeight: "700",
               paddingBottom: 10,
               height: 80
             }
@@ -100,7 +101,7 @@ export default class ContentBuilder extends Component {
             iOSUIKit.title3Emphasized,
             {
               color: "rgb(255, 255, 255)",
-              fontWeight: "900",
+              fontWeight: "700",
               paddingBottom: 10,
               height: 80
             }

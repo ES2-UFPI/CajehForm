@@ -13,16 +13,23 @@ import {
   Fab,
   Text as NewText
 } from "native-base";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity,FlatList } from "react-native";
 import Modal from "react-native-modal";
 import Publish from "../Components/Lookers/Publish.js";
 import CajehButton from "../Components/Lookers/CajehButton.js";
 import { material } from "react-native-typography";
+import Axios from 'axios'
 
 export default class Lobby extends Component {
-  state = {
-    isModalVisible: false
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    isModalVisible: false,
+    publications: []
+    }
+  }
+
 
   showModal = () => {
     this.setState({ isModalVisible: true });
@@ -30,6 +37,30 @@ export default class Lobby extends Component {
   hideModal = () => {
     this.setState({ isModalVisible: false });
   };
+  _renderItem = ({ item }) => (
+    <Publish  
+              key={item.key}
+              collaboratorImage="https://facebook.github.io/react-native/docs/assets/favicon.png"
+              collaboratorName="Cajeh"
+              collaboratorNote="@danielcajeh"
+              publishSaves={20}
+              publishComments={4}
+              publishTimeAgo={11}
+              publishContent = {item.content}
+            />
+  );
+
+  async componentDidMount() {
+    try {
+      const publicationsDaAPI = await Axios.get('http://cajeh-api.herokuapp.com/publications')
+      let allPublications = publicationsDaAPI.data
+      this.setState({ publications: [...this.state.publications,...allPublications] })
+    } catch (error) {
+      alert(error)
+    }
+  }
+
+
   render() {
     return (
       <Container style={{ position: "relative" }}>
@@ -53,7 +84,7 @@ export default class Lobby extends Component {
               }}
               onPress={this.showModal}
             >
-              <Icon name="hammer" style={{ color: "rgba(255,255,255,1)" }} />
+              <Icon name="construct" style={{ color: "rgba(255,255,255,1)" }} />
             </NewButton>
           </Left>
           <Body>
@@ -62,7 +93,7 @@ export default class Lobby extends Component {
                 style={
                   (material.headline,
                   {
-                    color: "rgba(0,255,255,1)",
+                    color: "rgba(0,220,200,1)",
                     fontWeight: "900"
                   })
                 }
@@ -104,6 +135,7 @@ export default class Lobby extends Component {
             isVisible={this.state.isModalVisible}
             style={{ margin: 0 }}
             useNativeDriver={true}
+            animationOutTiming = {200}
             hideModalContentWhileAnimating = {true}
             animationIn= 'fadeInUp'
             animationOut= 'fadeOutDown'
@@ -151,7 +183,7 @@ export default class Lobby extends Component {
                 </View>
                 <NewButton
                   style={{
-                    backgroundColor: "rgba(0,0,0, 0.5)",
+                    backgroundColor: "rgba(0,0,0,0.9)",
                     height: 50,
                     borderBottomWidth: 3,
                     borderBottomColor: "rgba(255,255,255,0.6)"
@@ -159,14 +191,14 @@ export default class Lobby extends Component {
                   onPress={this.hideModal}
                 >
                   <Icon
-                    name="close-circle"
+                    name="close-circle-outline"
                     style={{ color: "rgba(255,255,255,1)"}}
                   />
                   <NewText style={{ color: "white", fontWeight: "700" }}>
                     Close
                   </NewText>
                   <Icon
-                    name="close-circle"
+                    name="close-circle-outline"
                     style={{ color: "rgba(255,255,255,1)"}}
                   />
                 </NewButton>
@@ -174,22 +206,12 @@ export default class Lobby extends Component {
           </Modal>
           {/* Mudar a Cor do Lobby da Rede, variar e vender para o usuário escolher */}
           <View style={{ top: 60 }}>
-            <Publish
-              collaboratorImage="https://facebook.github.io/react-native/docs/assets/favicon.png"
-              collaboratorName="Cajeh"
-              collaboratorNote="@danielcajeh"
-              publishSaves={20}
-              publishComments={4}
-              publishTimeAgo={11}
-            />
-            <Publish
-              collaboratorImage="https://facebook.github.io/react-native/docs/assets/favicon.png"
-              collaboratorName="Neo"
-              collaboratorNote="@dixMatrix"
-              publishSaves={15}
-              publishComments={2}
-              publishTimeAgo={15}
-            />
+          <FlatList
+        data={this.state.publications}
+        extraData={this.state.publications}
+        keyExtractor={(item, index) => 'key' + index}
+        renderItem={this._renderItem}
+      />
             <View style={{ height: 60 }} />
           </View>
         </Content>

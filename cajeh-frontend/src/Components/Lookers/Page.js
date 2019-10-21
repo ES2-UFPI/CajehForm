@@ -9,15 +9,15 @@ export default class Page extends Component {
   render () {
     return (
           <View style={[this.props.design,{backgroundColor: this.props.backColor}]}>
-          <Text style={[iOSUIKit.largeTitleEmphasized, {color: 'rgb(255, 135, 95)', fontWeight:'900', paddingBottom: 10}]}>
+          <Text numberOfLines={3} style={[iOSUIKit.largeTitleEmphasized, {color: "rgba(0,190,170,1)", fontWeight:'900', paddingBottom: 10, height:50}]}>
           {this.props.text1}</Text>
-          <Text style={[iOSUIKit.title3Emphasized, {color: 'rgb(255, 255, 255)', fontWeight:'900', paddingBottom:10}]}>
+          <Text numberOfLines={3} style={[iOSUIKit.title3Emphasized, {color: 'rgb(255, 255, 255)', fontWeight:'700', paddingBottom:5, height:85}]}>
           {this.props.text2}</Text>
-          <Text style={[iOSUIKit.title3Emphasized, {color: 'rgb(255, 255, 255)', fontWeight:'900', paddingBottom:10}]}>
+          <Text numberOfLines={3} style={[iOSUIKit.title3Emphasized, {color: 'rgb(255, 255, 255)', fontWeight:'700', paddingBottom:5, height:85}]}>
           {this.props.text3}</Text>
-          <Text style={[iOSUIKit.title3Emphasized, {color: 'rgb(255, 255, 255)', fontWeight:'900', paddingBottom:10}]}>
+          <Text numberOfLines={3} style={[iOSUIKit.title3Emphasized, {color: 'rgb(255, 255, 255)', fontWeight:'700', paddingBottom:5, height:85}]}>
           {this.props.text4}</Text>
-          <Text style={[iOSUIKit.title3Emphasized, {color: 'rgb(255, 255, 255)', fontWeight:'900', paddingBottom:10}]}>
+          <Text numberOfLines={3} style={[iOSUIKit.title3Emphasized, {color: 'rgb(255, 255, 255)', fontWeight:'700', paddingBottom:5, height:85}]}>
           {this.props.text5}</Text>
           </View>
     )
